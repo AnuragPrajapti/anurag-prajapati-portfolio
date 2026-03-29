@@ -28,7 +28,7 @@ const Navbar: React.FC = () => {
 
   const handleNavClick = (hash: string) => {
     setIsMobileMenuOpen(false);
-    
+
     // Small delay to ensure menu closes first
     setTimeout(() => {
       const element = document.querySelector(hash);
