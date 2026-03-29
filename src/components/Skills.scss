@@ -1,0 +1,102 @@
+@import '../styles/variables.scss';
+
+.skills {
+  background: $dark-bg;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: $spacing-3xl;
+
+    .section-title {
+      font-size: $font-size-4xl;
+      margin-bottom: $spacing-md;
+
+      @media (max-width: $breakpoint-md) {
+        font-size: $font-size-3xl;
+      }
+    }
+
+    .section-subtitle {
+      font-size: $font-size-lg;
+      color: $text-muted;
+    }
+  }
+
+  .skills-categories {
+    display: flex;
+    justify-content: center;
+    gap: $spacing-md;
+    margin-bottom: $spacing-2xl;
+    flex-wrap: wrap;
+    padding: 0 $spacing-sm;
+
+    @media (max-width: $breakpoint-sm) {
+      gap: $spacing-sm;
+    }
+
+    .category-btn {
+      padding: $spacing-sm $spacing-lg;
+      background: $card-bg;
+      border: 2px solid $border-color;
+      border-radius: $border-radius-full;
+      color: $text-secondary;
+      font-weight: $font-weight-medium;
+      font-size: $font-size-base;
+      transition: all $transition-base;
+
+      @media (max-width: $breakpoint-sm) {
+        padding: $spacing-xs $spacing-md;
+        font-size: $font-size-sm;
+      }
+
+      &:hover {
+        border-color: $primary-color;
+        color: $primary-color;
+      }
+
+      &.active {
+        background: $gradient-primary;
+        border-color: transparent;
+        color: $text-primary;
+        box-shadow: $shadow-glow;
+      }
+    }
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: $spacing-md;
+    max-width: 1000px;
+    margin: 0 auto;
+
+    @media (max-width: $breakpoint-sm) {
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    }
+
+    .skill-card {
+      background: $card-bg;
+      padding: $spacing-lg;
+      border-radius: $border-radius-lg;
+      border: 1px solid $border-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      transition: all $transition-base;
+      cursor: pointer;
+
+      &:hover {
+        border-color: $primary-color;
+        background: rgba(99, 102, 241, 0.05);
+        box-shadow: $shadow-md;
+      }
+
+      .skill-name {
+        color: $text-secondary;
+        font-weight: $font-weight-medium;
+        font-size: $font-size-base;
+      }
+    }
+  }
+}

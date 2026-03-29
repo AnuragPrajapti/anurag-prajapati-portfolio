@@ -1,0 +1,155 @@
+@import '../styles/variables.scss';
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: $z-index-sticky;
+  background: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+  transition: all $transition-base;
+  border-bottom: 1px solid transparent;
+
+  @media (max-width: $breakpoint-md) {
+    background: rgba(15, 23, 42, 0.98);
+  }
+
+  &.scrolled {
+    background: rgba(15, 23, 42, 0.98);
+    border-bottom-color: $border-color;
+    box-shadow: $shadow-lg;
+  }
+
+  .navbar-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: $spacing-md 0;
+  }
+
+  .navbar-brand {
+    font-size: $font-size-2xl;
+    font-weight: $font-weight-bold;
+    font-family: $font-family-heading;
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: $font-size-xl;
+    }
+
+    .brand-text {
+      color: $text-primary;
+      transition: color $transition-base;
+    }
+
+    .brand-dot {
+      color: $primary-color;
+      font-size: $font-size-3xl;
+      line-height: 1;
+    }
+
+    &:hover .brand-text {
+      color: $primary-color;
+    }
+  }
+
+  .navbar-links {
+    display: flex;
+    gap: $spacing-lg;
+
+    &.desktop {
+      @media (max-width: $breakpoint-md) {
+        display: none;
+      }
+    }
+  }
+
+  .nav-link {
+    color: $text-secondary;
+    font-weight: $font-weight-medium;
+    font-size: $font-size-base;
+    padding: $spacing-xs $spacing-sm;
+    border-radius: $border-radius-md;
+    transition: all $transition-base;
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: $gradient-primary;
+      transform: translateX(-50%);
+      transition: width $transition-base;
+    }
+
+    &:hover {
+      color: $primary-color;
+
+      &::after {
+        width: 80%;
+      }
+    }
+  }
+
+  .mobile-menu-button {
+    display: none;
+    background: transparent;
+    color: $text-primary;
+    font-size: $font-size-2xl;
+    padding: $spacing-xs;
+
+    @media (max-width: $breakpoint-md) {
+      display: block;
+    }
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+}
+
+.mobile-menu {
+  background: rgba(30, 41, 59, 0.98);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid $border-color;
+  overflow: hidden;
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+
+  @media (min-width: $breakpoint-md) {
+    display: none;
+  }
+
+  .mobile-menu-content {
+    padding: $spacing-md 0;
+  }
+
+  .mobile-nav-link {
+    display: block;
+    color: $text-secondary;
+    font-weight: $font-weight-medium;
+    font-size: $font-size-lg;
+    padding: $spacing-md $spacing-lg;
+    transition: all $transition-base;
+    border-left: 3px solid transparent;
+    text-align: left;
+
+    @media (max-width: $breakpoint-sm) {
+      font-size: $font-size-base;
+      padding: $spacing-sm $spacing-md;
+    }
+
+    &:hover,
+    &:active {
+      color: $primary-color;
+      background: rgba(99, 102, 241, 0.1);
+      border-left-color: $primary-color;
+    }
+  }
+}

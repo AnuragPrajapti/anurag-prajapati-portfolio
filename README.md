@@ -1,46 +1,72 @@
-# Getting Started with Create React App
+# Anurag Prajapati - Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A professional, interactive portfolio website built with React.js, TypeScript, and SCSS.
 
-## Available Scripts
+## 🚀 Features
 
-In the project directory, you can run:
+- **Modern Design**: Clean, professional UI with smooth animations
+- **Fully Responsive**: Optimized for all devices and screen sizes
+- **Interactive Components**: Engaging user experience with Framer Motion animations
+- **Type-Safe**: Built with TypeScript for robust code quality
+- **Performance Optimized**: Fast loading and smooth interactions
+- **SEO Friendly**: Meta tags and semantic HTML for better search visibility
 
-### `npm start`
+## 🛠️ Tech Stack
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- **React.js 18**: Modern React with hooks and functional components
+- **TypeScript**: Type-safe development
+- **SCSS**: Advanced styling with variables and mixins
+- **React Router**: Client-side routing
+- **Framer Motion**: Smooth animations and transitions
+- **React Icons**: Beautiful icon library
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## 📦 Installation & Running
 
-### `npm test`
+1. Navigate to the project directory:
+```bash
+cd anurag-portfolio-app
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+2. Install dependencies (if not already done):
+```bash
+npm install
+```
 
-### `npm run build`
+3. Start the development server:
+```bash
+npm start
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The app will open at [http://localhost:3000](http://localhost:3000)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## 🏗️ Build
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To create a production build:
 
-### `npm run eject`
+```bash
+npm run build
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 📱 Sections
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- **Hero**: Introduction with call-to-action
+- **About**: Professional summary and highlights
+- **Skills**: Interactive skill categories
+- **Experience**: Timeline of work experience
+- **Projects**: Featured projects showcase
+- **Contact**: Contact form and information
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## 🎨 Customization
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+Edit `src/data/portfolioData.ts` to update your personal information, projects, and experience.
 
-## Learn More
+Edit `src/styles/variables.scss` to customize colors and styling.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## 👤 Contact
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**Anurag Prajapati**
+- Email: apanurag1998@gmail.com
+- Phone: +91 62653-36686
+- Location: Indore, Madhya Pradesh, India
+
+Built with ❤️ using React.js & TypeScript

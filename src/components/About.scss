@@ -1,0 +1,90 @@
+@import '../styles/variables.scss';
+
+.about {
+  background: $darker-bg;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: $spacing-3xl;
+
+    .section-title {
+      font-size: $font-size-4xl;
+      margin-bottom: $spacing-md;
+
+      @media (max-width: $breakpoint-md) {
+        font-size: $font-size-3xl;
+      }
+    }
+
+    .section-subtitle {
+      font-size: $font-size-lg;
+      color: $text-muted;
+    }
+  }
+
+  .about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-3xl;
+    align-items: start;
+
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: 1fr;
+      gap: $spacing-xl;
+    }
+
+    .about-description {
+      p {
+        font-size: $font-size-lg;
+        line-height: $line-height-relaxed;
+        color: $text-secondary;
+
+        @media (max-width: $breakpoint-sm) {
+          font-size: $font-size-base;
+        }
+      }
+    }
+
+    .about-highlights {
+      h3 {
+        font-size: $font-size-2xl;
+        margin-bottom: $spacing-lg;
+        color: $text-primary;
+      }
+
+      .highlights-list {
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-md;
+
+        li {
+          display: flex;
+          align-items: center;
+          gap: $spacing-md;
+          padding: $spacing-md;
+          background: $card-bg;
+          border-radius: $border-radius-lg;
+          border: 1px solid $border-color;
+          transition: all $transition-base;
+
+          &:hover {
+            transform: translateX(10px);
+            border-color: $primary-color;
+            background: rgba(99, 102, 241, 0.05);
+          }
+
+          .check-icon {
+            color: $success-color;
+            font-size: $font-size-xl;
+            flex-shrink: 0;
+          }
+
+          span {
+            color: $text-secondary;
+            font-size: $font-size-base;
+          }
+        }
+      }
+    }
+  }
+}

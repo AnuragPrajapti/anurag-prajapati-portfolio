@@ -1,0 +1,211 @@
+@import '../styles/variables.scss';
+
+.experience {
+  background: $darker-bg;
+
+  .section-header {
+    text-align: center;
+    margin-bottom: $spacing-3xl;
+
+    .section-title {
+      font-size: $font-size-4xl;
+      margin-bottom: $spacing-md;
+
+      @media (max-width: $breakpoint-md) {
+        font-size: $font-size-3xl;
+      }
+    }
+
+    .section-subtitle {
+      font-size: $font-size-lg;
+      color: $text-muted;
+    }
+  }
+
+  .timeline {
+    position: relative;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-xl;
+
+    @media (max-width: $breakpoint-sm) {
+      gap: $spacing-lg;
+    }
+
+    .timeline-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: $spacing-lg;
+      align-items: start;
+
+      @media (max-width: $breakpoint-md) {
+        grid-template-columns: 60px 1fr;
+        gap: $spacing-md;
+      }
+
+      @media (max-width: $breakpoint-sm) {
+        grid-template-columns: 50px 1fr;
+        gap: $spacing-sm;
+      }
+
+      .timeline-marker {
+        position: sticky;
+        top: 100px;
+        display: flex;
+        justify-content: center;
+        padding-top: $spacing-xs;
+
+        .marker-icon {
+          width: 60px;
+          height: 60px;
+          background: $gradient-primary;
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: $text-primary;
+          font-size: $font-size-xl;
+          box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+
+          @media (max-width: $breakpoint-md) {
+            width: 50px;
+            height: 50px;
+            font-size: $font-size-lg;
+          }
+        }
+      }
+
+      .timeline-content {
+        width: 100%;
+        padding: 0;
+      }
+
+      .experience-card {
+        background: $card-bg;
+        border: 1px solid $border-color;
+        border-radius: $border-radius-xl;
+        padding: $spacing-xl;
+        transition: all $transition-base;
+
+        @media (max-width: $breakpoint-sm) {
+          padding: $spacing-md;
+          border-radius: $border-radius-lg;
+        }
+
+        &:hover {
+          transform: translateY(-5px);
+          border-color: $primary-color;
+          box-shadow: $shadow-xl;
+
+          @media (max-width: $breakpoint-sm) {
+            transform: translateY(-2px);
+          }
+        }
+
+        .card-header {
+          margin-bottom: $spacing-lg;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
+          align-items: start;
+          gap: $spacing-md;
+
+          .position {
+            font-size: $font-size-2xl;
+            color: $text-primary;
+            margin-bottom: 0;
+            flex: 1 1 100%;
+
+            @media (max-width: $breakpoint-sm) {
+              font-size: $font-size-xl;
+            }
+          }
+
+          .company-info {
+            display: flex;
+            align-items: center;
+            gap: $spacing-md;
+            flex-wrap: wrap;
+
+            .company {
+              font-size: $font-size-lg;
+              font-weight: $font-weight-semibold;
+              color: $primary-color;
+            }
+
+            .location {
+              display: flex;
+              align-items: center;
+              gap: $spacing-xs;
+              color: $text-muted;
+              font-size: $font-size-sm;
+
+              svg {
+                font-size: $font-size-sm;
+              }
+            }
+          }
+
+          .period {
+            display: flex;
+            align-items: center;
+            gap: $spacing-xs;
+            color: $text-muted;
+            font-size: $font-size-sm;
+            background: rgba(99, 102, 241, 0.1);
+            padding: $spacing-xs $spacing-md;
+            border-radius: $border-radius-full;
+            white-space: nowrap;
+
+            svg {
+              font-size: $font-size-sm;
+            }
+          }
+        }
+
+        .description {
+          color: $text-secondary;
+          margin-bottom: $spacing-lg;
+          line-height: $line-height-relaxed;
+        }
+
+        .responsibilities {
+          h4 {
+            font-size: $font-size-lg;
+            color: $text-primary;
+            margin-bottom: $spacing-md;
+          }
+
+          ul {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: $spacing-sm;
+
+            @media (max-width: $breakpoint-sm) {
+              grid-template-columns: 1fr;
+            }
+
+            li {
+              color: $text-secondary;
+              padding-left: $spacing-lg;
+              position: relative;
+              line-height: $line-height-relaxed;
+              font-size: $font-size-sm;
+
+              &::before {
+                content: '▹';
+                position: absolute;
+                left: 0;
+                color: $primary-color;
+                font-size: $font-size-xl;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
