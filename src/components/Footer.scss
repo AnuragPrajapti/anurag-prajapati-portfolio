@@ -3,24 +3,31 @@
 .footer {
   background: $darker-bg;
   border-top: 1px solid $border-color;
-  padding: $spacing-3xl 0 $spacing-xl;
+  padding: $spacing-3xl 0 $spacing-lg;
 
   @media (max-width: $breakpoint-sm) {
-    padding: $spacing-xl 0 $spacing-md;
+    padding: $spacing-2xl 0 $spacing-md;
   }
 
   .footer-content {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1.5fr;
     gap: $spacing-3xl;
     margin-bottom: $spacing-2xl;
     padding-bottom: $spacing-2xl;
     border-bottom: 1px solid $border-color;
 
     @media (max-width: $breakpoint-md) {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: $spacing-xl;
+    }
+
+    @media (max-width: $breakpoint-sm) {
+      grid-template-columns: 1fr;
+      gap: $spacing-lg;
       text-align: center;
+      padding-bottom: $spacing-lg;
+      margin-bottom: $spacing-lg;
     }
 
     .footer-brand {
@@ -29,9 +36,14 @@
         margin-bottom: $spacing-sm;
         font-family: $font-family-heading;
         color: $text-primary;
+        transition: color $transition-base;
 
         @media (max-width: $breakpoint-sm) {
           font-size: $font-size-2xl;
+        }
+
+        &:hover {
+          color: $primary-color;
         }
 
         .dot {
@@ -42,6 +54,47 @@
       p {
         color: $text-muted;
         font-size: $font-size-base;
+        margin-bottom: $spacing-md;
+
+        @media (max-width: $breakpoint-sm) {
+          font-size: $font-size-sm;
+        }
+      }
+
+      .footer-social {
+        display: flex;
+        gap: $spacing-md;
+        margin-top: $spacing-md;
+
+        @media (max-width: $breakpoint-sm) {
+          justify-content: center;
+          gap: $spacing-sm;
+        }
+
+        a {
+          width: 40px;
+          height: 40px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: rgba(99, 102, 241, 0.1);
+          border-radius: $border-radius-md;
+          color: $primary-color;
+          font-size: $font-size-lg;
+          transition: all $transition-base;
+
+          @media (max-width: $breakpoint-sm) {
+            width: 44px;
+            height: 44px;
+            font-size: $font-size-xl;
+          }
+
+          &:hover {
+            background: $primary-color;
+            color: $text-primary;
+            transform: translateY(-3px);
+          }
+        }
       }
     }
 
@@ -51,7 +104,22 @@
       gap: $spacing-sm;
 
       @media (max-width: $breakpoint-md) {
+        align-items: flex-start;
+      }
+
+      @media (max-width: $breakpoint-sm) {
         align-items: center;
+      }
+
+      h4 {
+        color: $text-primary;
+        font-size: $font-size-lg;
+        margin-bottom: $spacing-xs;
+        font-weight: $font-weight-semibold;
+
+        @media (max-width: $breakpoint-sm) {
+          font-size: $font-size-base;
+        }
       }
 
       a {
@@ -59,10 +127,29 @@
         font-size: $font-size-base;
         transition: all $transition-base;
         width: fit-content;
+        position: relative;
+
+        @media (max-width: $breakpoint-sm) {
+          font-size: $font-size-sm;
+        }
+
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: $primary-color;
+          transition: width $transition-base;
+        }
 
         &:hover {
           color: $primary-color;
-          transform: translateX(5px);
+
+          &::after {
+            width: 100%;
+          }
         }
       }
     }
@@ -73,13 +160,55 @@
       gap: $spacing-sm;
 
       @media (max-width: $breakpoint-md) {
+        grid-column: 1 / -1;
+      }
+
+      @media (max-width: $breakpoint-sm) {
         align-items: center;
       }
 
-      p {
+      h4 {
+        color: $text-primary;
+        font-size: $font-size-lg;
+        margin-bottom: $spacing-xs;
+        font-weight: $font-weight-semibold;
+
+        @media (max-width: $breakpoint-sm) {
+          font-size: $font-size-base;
+        }
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: $spacing-sm;
         color: $text-secondary;
         font-size: $font-size-sm;
-        margin: 0;
+        transition: all $transition-base;
+        width: fit-content;
+
+        @media (max-width: $breakpoint-sm) {
+          font-size: $font-size-sm;
+          gap: $spacing-xs;
+        }
+
+        svg {
+          color: $primary-color;
+          font-size: $font-size-base;
+
+          @media (max-width: $breakpoint-sm) {
+            font-size: $font-size-sm;
+          }
+        }
+
+        &:hover {
+          color: $primary-color;
+          transform: translateX(5px);
+
+          @media (max-width: $breakpoint-sm) {
+            transform: translateX(0);
+          }
+        }
       }
     }
   }
@@ -91,15 +220,25 @@
     flex-wrap: wrap;
     gap: $spacing-md;
 
-    @media (max-width: $breakpoint-md) {
+    @media (max-width: $breakpoint-sm) {
       flex-direction: column;
       text-align: center;
+      gap: $spacing-xs;
     }
 
     p {
       color: $text-muted;
       font-size: $font-size-sm;
-      margin: 0;
+
+      @media (max-width: $breakpoint-sm) {
+        font-size: $font-size-xs;
+      }
+    }
+
+    .copyright {
+      @media (max-width: $breakpoint-sm) {
+        order: 2;
+      }
     }
 
     .made-with {
@@ -107,10 +246,27 @@
       align-items: center;
       gap: $spacing-xs;
 
+      @media (max-width: $breakpoint-sm) {
+        order: 1;
+        justify-content: center;
+      }
+
       .heart-icon {
-        color: #ef4444;
-        animation: pulse 2s infinite;
+        color: #e11d48;
+        animation: heartbeat 1.5s ease-in-out infinite;
       }
     }
+  }
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  10%, 30% {
+    transform: scale(1.1);
+  }
+  20%, 40% {
+    transform: scale(1);
   }
 }

@@ -9,6 +9,7 @@ import {
   FaDownload,
 } from "react-icons/fa";
 import { personalInfo } from "../data/portfolioData";
+import profileImage from "../assets/anurag_prajapati_Image.png";
 import "./Hero.scss";
 
 const Hero: React.FC = () => {
@@ -152,9 +153,11 @@ const Hero: React.FC = () => {
             <div className="profile-card">
               <div className="profile-image-wrapper">
                 <div className="profile-image">
-                  <div className="profile-placeholder">
-                    <span>{personalInfo.name.charAt(0)}</span>
-                  </div>
+                  <img
+                    src={profileImage}
+                    alt={personalInfo.name}
+                    className="profile-photo"
+                  />
                 </div>
                 <div className="profile-status">
                   <span className="status-dot"></span>
@@ -181,10 +184,10 @@ const Hero: React.FC = () => {
         </div>
       </div>
 
-      <div className="scroll-indicator">
+      {/* <div className="scroll-indicator">
         <div className="mouse"></div>
         <span>Scroll Down</span>
-      </div>
+      </div> */}
     </section>
   );
 };

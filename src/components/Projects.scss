@@ -1,207 +1,412 @@
 @import '../styles/variables.scss';
 
 .projects {
-  background: $dark-bg;
+	background: $dark-bg;
 
-  .section-header {
-    text-align: center;
-    margin-bottom: $spacing-3xl;
+	.section-header {
+		text-align: center;
+		margin-bottom: $spacing-3xl;
 
-    .section-title {
-      font-size: $font-size-4xl;
-      margin-bottom: $spacing-md;
+		@media (max-width: $breakpoint-md) {
+			margin-bottom: $spacing-xl;
+		}
 
-      @media (max-width: $breakpoint-md) {
-        font-size: $font-size-3xl;
-      }
-    }
+		.section-title {
+			font-size: $font-size-4xl;
+			margin-bottom: $spacing-md;
 
-    .section-subtitle {
-      font-size: $font-size-lg;
-      color: $text-muted;
-    }
-  }
+			@media (max-width: $breakpoint-md) {
+				font-size: $font-size-3xl;
+			}
+		}
 
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: $spacing-xl;
+		.section-subtitle {
+			font-size: $font-size-lg;
+			color: $text-muted;
+		}
+	}
 
-    @media (max-width: $breakpoint-md) {
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: $spacing-lg;
-    }
+	.projects-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+		gap: $spacing-xl;
 
-    @media (max-width: $breakpoint-sm) {
-      grid-template-columns: 1fr;
-      gap: $spacing-md;
-    }
+		@media (max-width: $breakpoint-md) {
+			grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+			gap: $spacing-lg;
+		}
 
-    .project-card {
-      background: $card-bg;
-      border: 1px solid $border-color;
-      border-radius: $border-radius-xl;
-      padding: $spacing-xl;
-      transition: all $transition-base;
-      display: flex;
-      flex-direction: column;
-      gap: $spacing-md;
+		@media (max-width: $breakpoint-sm) {
+			grid-template-columns: 1fr;
+			gap: $spacing-md;
+		}
 
-      @media (max-width: $breakpoint-sm) {
-        padding: $spacing-lg;
-        border-radius: $border-radius-lg;
-      }
+		.project-card {
+			background: $card-bg;
+			border: 1px solid $border-color;
+			border-radius: $border-radius-xl;
+			padding: $spacing-xl;
+			transition: all $transition-base;
+			display: flex;
+			flex-direction: column;
+			gap: $spacing-md;
 
-      &:hover {
-        border-color: $primary-color;
-        box-shadow: $shadow-xl;
+			@media (max-width: $breakpoint-sm) {
+				padding: $spacing-lg;
+				border-radius: $border-radius-lg;
+			}
 
-        @media (max-width: $breakpoint-sm) {
-          transform: translateY(-3px);
-        }
-      }
+			&:hover {
+				border-color: $primary-color;
+				box-shadow: $shadow-xl;
 
-      .project-header {
-        .project-title-row {
-          display: flex;
-          justify-content: space-between;
-          align-items: start;
-          margin-bottom: $spacing-md;
+				@media (max-width: $breakpoint-sm) {
+					transform: translateY(-3px);
+				}
+			}
 
-          .project-name {
-            font-size: $font-size-2xl;
-            color: $text-primary;
-            flex: 1;
+			.project-header {
+				.project-title-row {
+					display: flex;
+					justify-content: space-between;
+					align-items: start;
+					margin-bottom: $spacing-md;
 
-            @media (max-width: $breakpoint-sm) {
-              font-size: $font-size-xl;
-            }
+					.project-name {
+						font-size: $font-size-2xl;
+						color: $text-primary;
+						flex: 1;
 
-            @media (max-width: $breakpoint-xs) {
-              font-size: $font-size-lg;
-            }
-          }
+						@media (max-width: $breakpoint-sm) {
+							font-size: $font-size-xl;
+						}
 
-          .project-link {
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: rgba(99, 102, 241, 0.1);
-            border-radius: $border-radius-md;
-            color: $primary-color;
-            transition: all $transition-base;
+						@media (max-width: $breakpoint-xs) {
+							font-size: $font-size-lg;
+						}
+					}
 
-            &:hover {
-              background: $primary-color;
-              color: $text-primary;
-              transform: translateY(-3px);
-            }
-          }
-        }
+					.project-link {
+						width: 40px;
+						height: 40px;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						background: rgba(99, 102, 241, 0.1);
+						border-radius: $border-radius-md;
+						color: $primary-color;
+						transition: all $transition-base;
 
-        .project-meta {
-          display: flex;
-          flex-wrap: wrap;
-          gap: $spacing-sm;
-          margin-bottom: $spacing-md;
+						&:hover {
+							background: $primary-color;
+							color: $text-primary;
+							transform: translateY(-3px);
+						}
+					}
+				}
 
-          .role,
-          .period,
-          .team-size {
-            font-size: $font-size-sm;
-            padding: $spacing-xs $spacing-sm;
-            border-radius: $border-radius-md;
-            display: inline-flex;
-            align-items: center;
-            gap: $spacing-xs;
-          }
+				.project-meta {
+					display: flex;
+					flex-wrap: wrap;
+					gap: $spacing-sm;
+					margin-bottom: $spacing-md;
 
-          .role {
-            background: rgba(99, 102, 241, 0.1);
-            color: $primary-color;
-            font-weight: $font-weight-semibold;
-          }
+					.role,
+					.period,
+					.team-size {
+						font-size: $font-size-sm;
+						padding: $spacing-xs $spacing-sm;
+						border-radius: $border-radius-md;
+						display: inline-flex;
+						align-items: center;
+						gap: $spacing-xs;
+					}
 
-          .period {
-            background: rgba(139, 92, 246, 0.1);
-            color: $secondary-color;
-          }
+					.role {
+						background: rgba(99, 102, 241, 0.1);
+						color: $primary-color;
+						font-weight: $font-weight-semibold;
+					}
 
-          .team-size {
-            background: rgba(6, 182, 212, 0.1);
-            color: $accent-color;
+					.period {
+						background: rgba(139, 92, 246, 0.1);
+						color: $secondary-color;
+					}
 
-            svg {
-              font-size: $font-size-sm;
-            }
-          }
-        }
-      }
+					.team-size {
+						background: rgba(6, 182, 212, 0.1);
+						color: $accent-color;
 
-      .project-description {
-        color: $text-secondary;
-        line-height: $line-height-relaxed;
-        flex: 1;
-      }
+						svg {
+							font-size: $font-size-sm;
+						}
+					}
+				}
+			}
 
-      .project-highlights {
-        margin-top: $spacing-md;
+			.project-description {
+				color: $text-secondary;
+				line-height: $line-height-relaxed;
+				flex: 1;
+			}
 
-        h4 {
-          font-size: $font-size-base;
-          color: $text-primary;
-          margin-bottom: $spacing-sm;
-        }
+			.project-highlights {
+				margin-top: $spacing-md;
 
-        ul {
-          list-style: none;
-          display: flex;
-          flex-direction: column;
-          gap: $spacing-xs;
+				h4 {
+					font-size: $font-size-base;
+					color: $text-primary;
+					margin-bottom: $spacing-sm;
+				}
 
-          li {
-            color: $text-secondary;
-            font-size: $font-size-sm;
-            padding-left: $spacing-md;
-            position: relative;
+				ul {
+					list-style: none;
+					display: flex;
+					flex-direction: column;
+					gap: $spacing-xs;
 
-            &::before {
-              content: '•';
-              position: absolute;
-              left: 0;
-              color: $primary-color;
-              font-weight: $font-weight-bold;
-            }
-          }
-        }
-      }
+					li {
+						color: $text-secondary;
+						font-size: $font-size-sm;
+						padding-left: $spacing-md;
+						position: relative;
 
-      .project-tech {
-        display: flex;
-        flex-wrap: wrap;
-        gap: $spacing-xs;
-        margin-top: auto;
-        padding-top: $spacing-md;
-        border-top: 1px solid $border-color;
+						&::before {
+							content: '•';
+							position: absolute;
+							left: 0;
+							color: $primary-color;
+							font-weight: $font-weight-bold;
+						}
+					}
+				}
+			}
 
-        .tech-tag {
-          font-size: $font-size-xs;
-          padding: $spacing-xs $spacing-sm;
-          background: rgba(99, 102, 241, 0.05);
-          border: 1px solid rgba(99, 102, 241, 0.2);
-          border-radius: $border-radius-md;
-          color: $text-secondary;
-          transition: all $transition-base;
+			.project-tech {
+				display: flex;
+				flex-wrap: wrap;
+				gap: $spacing-xs;
+				margin-top: auto;
+				padding-top: $spacing-md;
+				border-top: 1px solid $border-color;
 
-          &:hover {
-            background: rgba(99, 102, 241, 0.15);
-            border-color: $primary-color;
-            color: $primary-color;
-          }
-        }
-      }
-    }
-  }
+				.tech-tag {
+					font-size: $font-size-xs;
+					padding: $spacing-xs $spacing-sm;
+					background: rgba(99, 102, 241, 0.05);
+					border: 1px solid rgba(99, 102, 241, 0.2);
+					border-radius: $border-radius-md;
+					color: $text-secondary;
+					transition: all $transition-base;
+
+					&:hover {
+						background: rgba(99, 102, 241, 0.15);
+						border-color: $primary-color;
+						color: $primary-color;
+					}
+				}
+			}
+		}
+	}
+
+	// Slider specific styling for mobile
+	.projects-slider {
+		max-width: 100%;
+		padding: 0 $spacing-xs;
+
+		.slider-item {
+			padding: 0 $spacing-xs;
+			outline: none;
+		}
+
+		.project-header {
+			.project-title-row {
+				display: flex;
+				justify-content: space-between;
+				align-items: start;
+				margin-bottom: $spacing-md;
+
+				.project-name {
+					font-size: $font-size-2xl;
+					color: $text-primary;
+					flex: 1;
+
+					@media (max-width: $breakpoint-sm) {
+						font-size: $font-size-xl;
+					}
+
+					@media (max-width: $breakpoint-xs) {
+						font-size: $font-size-lg;
+					}
+				}
+
+				.project-link {
+					width: 40px;
+					height: 40px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					background: rgba(99, 102, 241, 0.1);
+					border-radius: $border-radius-md;
+					color: $primary-color;
+					transition: all $transition-base;
+
+					&:hover {
+						background: $primary-color;
+						color: $text-primary;
+						transform: translateY(-3px);
+					}
+				}
+			}
+
+			.project-meta {
+				display: flex;
+				flex-wrap: wrap;
+				gap: $spacing-sm;
+				margin-bottom: $spacing-md;
+
+				.role,
+				.period,
+				.team-size {
+					font-size: $font-size-sm;
+					padding: $spacing-xs $spacing-sm;
+					border-radius: $border-radius-md;
+					display: inline-flex;
+					align-items: center;
+					gap: $spacing-xs;
+				}
+
+				.role {
+					background: rgba(99, 102, 241, 0.1);
+					color: $primary-color;
+					font-weight: $font-weight-semibold;
+				}
+
+				.period {
+					background: rgba(139, 92, 246, 0.1);
+					color: $secondary-color;
+				}
+
+				.team-size {
+					background: rgba(6, 182, 212, 0.1);
+					color: $accent-color;
+
+					svg {
+						font-size: $font-size-sm;
+					}
+				}
+			}
+		}
+
+		.slick-slider {
+			.slick-list {
+				.slick-track {
+					display: flex !important;
+
+					.slick-slide {
+						height: inherit !important;
+
+						>div {
+							height: 100%;
+
+							.slider-item {
+								height: 100%;
+
+								.project-card {
+									height: 100%;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+
+		.project-card {
+			background: $card-bg;
+			border: 1px solid $border-color;
+			border-radius: $border-radius-xl;
+			padding: $spacing-lg;
+			transition: all $transition-base;
+			display: flex;
+			flex-direction: column;
+			gap: $spacing-md;
+			margin: 0 auto;
+			height: 100%;
+
+			.project-tech {
+				display: flex;
+				flex-wrap: wrap;
+				gap: $spacing-xs;
+				margin-top: auto;
+				padding-top: $spacing-md;
+				border-top: 1px solid $border-color;
+
+				.tech-tag {
+					font-size: $font-size-xs;
+					padding: $spacing-xs $spacing-sm;
+					background: rgba(99, 102, 241, 0.05);
+					border: 1px solid rgba(99, 102, 241, 0.2);
+					border-radius: $border-radius-md;
+					color: $text-secondary;
+					transition: all $transition-base;
+
+					&:hover {
+						background: rgba(99, 102, 241, 0.15);
+						border-color: $primary-color;
+						color: $primary-color;
+					}
+				}
+			}
+		}
+
+		// Custom dots styling - Line/Bar style indicators
+		.slick-dots {
+			bottom: -20px !important;
+			display: flex !important;
+			justify-content: center !important;
+			align-items: center !important;
+			gap: $spacing-sm;
+			list-style: none !important;
+			padding: 0 !important;
+
+			li {
+				width: auto !important;
+				height: auto !important;
+				margin: 0 !important;
+
+				button {
+					width: 40px !important;
+					height: 4px !important;
+					padding: 0 !important;
+					background: rgba(99, 102, 241, 0.3) !important;
+					border-radius: 2px !important;
+					transition: all 0.3s ease !important;
+					border: none !important;
+					cursor: pointer !important;
+
+					&:before {
+						display: none !important;
+						content: '' !important;
+						opacity: 0 !important;
+					}
+
+					&:hover {
+						background: rgba(99, 102, 241, 0.6) !important;
+					}
+				}
+
+				&.slick-active button {
+					width: 60px !important;
+					background: linear-gradient(90deg, $primary-color, $secondary-color) !important;
+					box-shadow: 0 0 15px rgba(99, 102, 241, 0.6) !important;
+				}
+			}
+		}
+
+		// Remove hover effects on mobile slider
+		.project-card:hover {
+			transform: none;
+		}
+	}
 }

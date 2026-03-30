@@ -53,10 +53,19 @@
         gap: $spacing-lg;
         margin-bottom: $spacing-2xl;
 
+        @media (max-width: $breakpoint-sm) {
+          gap: $spacing-md;
+          margin-bottom: $spacing-xl;
+        }
+
         .info-item {
           display: flex;
           gap: $spacing-md;
           align-items: start;
+
+          @media (max-width: $breakpoint-sm) {
+            gap: $spacing-sm;
+          }
 
           .icon {
             width: 50px;
@@ -69,6 +78,12 @@
             color: $text-primary;
             font-size: $font-size-xl;
             flex-shrink: 0;
+
+            @media (max-width: $breakpoint-sm) {
+              width: 44px;
+              height: 44px;
+              font-size: $font-size-lg;
+            }
           }
 
           .info-content {
@@ -80,15 +95,24 @@
               font-size: $font-size-sm;
               color: $text-muted;
               font-weight: $font-weight-medium;
+
+              @media (max-width: $breakpoint-sm) {
+                font-size: $font-size-xs;
+              }
             }
 
             a, span {
               color: $text-secondary;
               font-size: $font-size-base;
+
+              @media (max-width: $breakpoint-sm) {
+                font-size: $font-size-sm;
+              }
             }
 
             a {
               transition: color $transition-base;
+              word-break: break-word;
 
               &:hover {
                 color: $primary-color;

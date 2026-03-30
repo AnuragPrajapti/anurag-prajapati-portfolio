@@ -70,8 +70,14 @@
     max-width: 1000px;
     margin: 0 auto;
 
+    @media (max-width: $breakpoint-md) {
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: $spacing-sm;
+    }
+
     @media (max-width: $breakpoint-sm) {
-      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-sm;
     }
 
     .skill-card {
@@ -85,17 +91,31 @@
       text-align: center;
       transition: all $transition-base;
       cursor: pointer;
+      min-height: 80px;
+
+      @media (max-width: $breakpoint-sm) {
+        padding: $spacing-md;
+        min-height: 70px;
+      }
 
       &:hover {
         border-color: $primary-color;
         background: rgba(99, 102, 241, 0.05);
         box-shadow: $shadow-md;
+
+        @media (max-width: $breakpoint-sm) {
+          transform: scale(1.02);
+        }
       }
 
       .skill-name {
         color: $text-secondary;
         font-weight: $font-weight-medium;
         font-size: $font-size-base;
+
+        @media (max-width: $breakpoint-sm) {
+          font-size: $font-size-sm;
+        }
       }
     }
   }

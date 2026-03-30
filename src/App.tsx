@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { BrowserRouter as Router } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
@@ -11,6 +11,10 @@ import Footer from "./components/Footer";
 import "./styles/global.scss";
 
 const App: React.FC = () => {
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }, []);
+
   return (
     <Router>
       <div className="App">
