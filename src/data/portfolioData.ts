@@ -6,7 +6,7 @@ export const personalInfo = {
   email: "apanurag1998@gmail.com",
   phone: "+91 62653-36686",
   location: "Indore, Madhya Pradesh, India",
-  linkedin: "https://www.linkedin.com/in/anurag-prajapati",
+  linkedin: "https://www.linkedin.com/in/anurag-prajapati-828a541bb/",
   github: "https://github.com/AnuragPrajapti",
   yearsOfExperience: "4+",
 };
